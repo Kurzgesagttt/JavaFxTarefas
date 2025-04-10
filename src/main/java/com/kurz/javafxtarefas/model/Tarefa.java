@@ -19,7 +19,6 @@ public class Tarefa {
         this.dataCriacao.set(dataCriacao);
     }
 
-    // Getters/Setters
     public long getId() { return id.get(); }
     public void setId(long id) { this.id.set(id); }
 
@@ -32,7 +31,7 @@ public class Tarefa {
     public LocalDateTime getDataCriacao() { return dataCriacao.get(); }
     public void setDataCriacao(LocalDateTime dataCriacao) { this.dataCriacao.set(dataCriacao); }
 
-    // Propriedades JavaFX
+    // propriedades javaFX
     public BooleanProperty realizadoProperty() { return realizado; }
     public StringProperty descricaoProperty() { return descricao; }
     public ObjectProperty<LocalDateTime> dataCriacaoProperty() { return dataCriacao; }
