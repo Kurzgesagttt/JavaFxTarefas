@@ -5,8 +5,7 @@ import com.kurz.javafxtarefas.model.dao.TarefaDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 
 import java.time.LocalDateTime;
@@ -24,6 +23,9 @@ public class JanelaPrincipal {
 
     @FXML
     private TableColumn<Tarefa, LocalDateTime> colunaDataCriacao;
+
+    @FXML
+    private TextField campoDescricao;
 
     private final ObservableList<Tarefa> tarefas = FXCollections.observableArrayList();
 
@@ -53,5 +55,20 @@ public class JanelaPrincipal {
     private void carregarTarefasDoBanco() {
         tarefas.clear();
         tarefas.addAll(tarefaDAO.listarTodas());
+    }
+
+    @FXML
+    private void criarTarefa() {
+        String descricao = campoDescricao.getText().trim();
+
+        if (!descricao.isEmpty()) {
+            Tarefa nova = new Tarefa();
+            nova.setDescricao(descricao);
+            nova.setRealizado(false);
+
+            tarefaDAO.inserir(nova);
+            carregarTarefasDoBanco();
+            campoDescricao.clear();
+        }
     }
 }

@@ -22,9 +22,9 @@
         </dependency>
 
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>8.3.0</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version> <!-- Ou a versão mais recente -->
         </dependency>
 
         <dependency>
