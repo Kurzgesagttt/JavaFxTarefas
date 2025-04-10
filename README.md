@@ -14,6 +14,4 @@ Projeto simples de gerenciamento de tarefas utilizando **JavaFX** como interface
 | **Docker**       | Utilizado para rodar o banco de dados PostgreSQL em container             |
 | **PostgreSQL**   | Banco de dados relacional, versão 16.3                                    |
 | **JDBC**         | API Java para conectar e executar operações no banco de dados             |
-| **JUnit 5**      | Framework de testes utilizado para testes unitários                       |
-
 ---
