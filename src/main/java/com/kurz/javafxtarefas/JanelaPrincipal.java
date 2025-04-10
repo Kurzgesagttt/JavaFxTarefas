@@ -33,7 +33,6 @@ public class JanelaPrincipal {
 
     @FXML
     public void initialize() {
-        // Configuração das colunas
         colunaFeito.setCellValueFactory(cellData -> cellData.getValue().realizadoProperty());
         colunaFeito.setCellFactory(CheckBoxTableCell.forTableColumn(colunaFeito));
         colunaFeito.setEditable(true);
