@@ -1,10 +1,10 @@
-# 📝 JavaFxTarefas
+# JavaFxTarefas
 
 Projeto simples de gerenciamento de tarefas utilizando **JavaFX** como interface gráfica e **PostgreSQL** como banco de dados. O objetivo é aplicar conceitos de desenvolvimento desktop com integração a banco de dados utilizando boas práticas, como separação em camadas e uso de ferramentas modernas.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 | Tecnologia       | Descrição                                                                 |
 |------------------|---------------------------------------------------------------------------|
@@ -17,6 +17,3 @@ Projeto simples de gerenciamento de tarefas utilizando **JavaFX** como interface
 | **JUnit 5**      | Framework de testes utilizado para testes unitários                       |
 
 ---
-
-## 🧱 Estrutura do Projeto
-
