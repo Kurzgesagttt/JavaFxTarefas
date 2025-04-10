@@ -1,0 +1,10 @@
+//postgrersql
+CREATE TABLE tarefas (
+    id BIGSERIAL PRIMARY KEY,
+    realizado BOOLEAN NOT NULL,
+    descricao VARCHAR(255) NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+//url:http://localhost:8080/tarefas

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="392.0" prefWidth="465.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kurz.javafxtarefas.JanelaPrincipal">
+   <children>
+       <TableView fx:id="tableView" layoutX="14.0" layoutY="14.0" prefHeight="338.0" prefWidth="433.0">
+           <columns>
+               <TableColumn fx:id="colunaFeito" prefWidth="105.0" text="Feito" />
+               <TableColumn fx:id="colunaDescricao" prefWidth="183.0" text="Descrição" />
+               <TableColumn fx:id="colunaDataCriacao" prefWidth="135.0" text="Data de Criação" />
+           </columns>
+       </TableView>
+       <TextField layoutX="14.0" layoutY="359.0" prefHeight="18.0" prefWidth="171.0" />
+      <Button layoutX="205.0" layoutY="359.0" mnemonicParsing="false" text="Criar tarefa" />
+   </children>
+</AnchorPane>
