@@ -33,10 +33,10 @@ public class JanelaPrincipal {
 
     @FXML
     public void initialize() {
+        // Configuração das colunas
         colunaFeito.setCellValueFactory(cellData -> cellData.getValue().realizadoProperty());
         colunaFeito.setCellFactory(CheckBoxTableCell.forTableColumn(colunaFeito));
         colunaFeito.setEditable(true);
-
         colunaFeito.setOnEditCommit(event -> {
             Tarefa tarefa = event.getRowValue();
             tarefa.setRealizado(event.getNewValue());
@@ -50,7 +50,17 @@ public class JanelaPrincipal {
         tableView.setEditable(true);
 
         carregarTarefasDoBanco();
+
+        tableView.setOnKeyPressed(event -> {
+            switch (event.getCode()) {
+                case DELETE:
+                case BACK_SPACE: // <- adiciona isso se quiser aceitar backspace também
+                    deletarTarefaSelecionada();
+                    break;
+            }
+        });
     }
+
 
     private void carregarTarefasDoBanco() {
         tarefas.clear();
@@ -71,4 +81,24 @@ public class JanelaPrincipal {
             campoDescricao.clear();
         }
     }
+
+    @FXML
+    private void deletarTarefaSelecionada() {
+        Tarefa tarefaSelecionada = tableView.getSelectionModel().getSelectedItem();
+
+        if (tarefaSelecionada != null) {
+            Alert confirmacao = new Alert(Alert.AlertType.CONFIRMATION);
+            confirmacao.setTitle("Confirmar Exclusão");
+            confirmacao.setHeaderText("Deseja excluir a tarefa?");
+            confirmacao.setContentText(tarefaSelecionada.getDescricao());
+
+            confirmacao.showAndWait().ifPresent(response -> {
+                if (response == ButtonType.OK) {
+                    tarefaDAO.deletar(tarefaSelecionada.getId());
+                    tarefas.remove(tarefaSelecionada); // Remove da ObservableList
+                }
+            });
+        }
+    }
+
 }
